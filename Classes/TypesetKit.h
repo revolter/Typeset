@@ -39,6 +39,9 @@ NSMutableAttributedString *_TSAttributedString(int size, ...);
 - (TypesetCGFloatBlock)fontSize;
 - (TypesetFontBlock)font;
 - (TypesetExactFontBlock)exactFont;
+
+- (TypesetStringBlock)accessibilitySpeechLanguage;
+
 - (TypesetKit *)regular;
 - (TypesetKit *)light;
 - (TypesetKit *)bold;

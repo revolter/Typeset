@@ -123,4 +123,10 @@
     };
 }
 
+- (NSMutableAttributedString *(^)(NSString *))accessibilitySpeechLanguage {
+    return ^(NSString *language) {
+        return self.typeset.accessibilitySpeechLanguage(language).string;
+    };
+}
+
 @end

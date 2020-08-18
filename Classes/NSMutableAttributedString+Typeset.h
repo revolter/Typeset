@@ -25,4 +25,6 @@
 - (NSMutableAttributedString *(^)(NSString *, CGFloat))font;
 - (NSMutableAttributedString *(^)(UIFont *))exactFont;
 
+- (NSMutableAttributedString *(^)(NSString *))accessibilitySpeechLanguage;
+
 @end

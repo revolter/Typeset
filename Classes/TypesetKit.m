@@ -122,6 +122,16 @@ NSMutableAttributedString *_TSAttributedString(int size, ...) {
     };
 }
 
+- (TypesetStringBlock)accessibilitySpeechLanguage {
+    return ^(NSString *language) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:UIAccessibilitySpeechAttributeLanguage value:language range:range];
+        }
+        return self;
+    };
+}
+
 - (TypesetStringBlock)fontName {
     return ^(NSString *fontName) {
         if (self.string.length) {
