@@ -25,6 +25,11 @@
 - (NSMutableAttributedString *(^)(NSString *, CGFloat))font;
 - (NSMutableAttributedString *(^)(UIFont *))exactFont;
 
+- (NSMutableAttributedString *(^)(BOOL))accessibilitySpeechPunctuation;
 - (NSMutableAttributedString *(^)(NSString *))accessibilitySpeechLanguage;
+- (NSMutableAttributedString *(^)(CGFloat))accessibilitySpeechPicth;
+- (NSMutableAttributedString *(^)(BOOL))accessibilitySpeechQueueAnnouncement;
+- (NSMutableAttributedString *(^)(NSString *))accessibilitySpeechIPANotation;
+- (NSMutableAttributedString *(^)(BOOL))accessibilitySpeechSpellOut;
 
 @end

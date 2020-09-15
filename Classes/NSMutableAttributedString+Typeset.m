@@ -82,9 +82,39 @@
     };
 }
 
+- (NSMutableAttributedString *(^)(BOOL))accessibilitySpeechPunctuation {
+    return ^(BOOL active) {
+        return self.typeset.accessibilitySpeechPunctuation(active).string;
+    };
+}
+
 - (NSMutableAttributedString *(^)(NSString *))accessibilitySpeechLanguage {
     return ^(NSString *language) {
         return self.typeset.accessibilitySpeechLanguage(language).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(CGFloat))accessibilitySpeechPicth {
+    return ^(CGFloat pitch) {
+        return self.typeset.accessibilitySpeechPicth(pitch).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(BOOL))accessibilitySpeechQueueAnnouncement {
+    return ^(BOOL active) {
+        return self.typeset.accessibilitySpeechQueueAnnouncement(active).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(NSString *))accessibilitySpeechIPANotation {
+    return ^(NSString *notation) {
+        return self.typeset.accessibilitySpeechIPANotation(notation).string;
+    };
+}
+
+- (NSMutableAttributedString *(^)(BOOL))accessibilitySpeechSpellOut {
+    return ^(BOOL active) {
+        return self.typeset.accessibilitySpeechSpellOut(active).string;
     };
 }
 

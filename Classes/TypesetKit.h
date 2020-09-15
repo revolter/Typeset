@@ -13,6 +13,7 @@
 
 #define TypesetBlock(...) TypesetKit *(^)(__VA_ARGS__)
 
+#define TypesetBOOLBlock TypesetBlock(BOOL)
 #define TypesetUIntegerBlock TypesetBlock(NSUInteger)
 #define TypesetIntegerBlock TypesetBlock(NSInteger)
 #define TypesetCGFloatBlock TypesetBlock(CGFloat)
@@ -40,7 +41,12 @@ NSMutableAttributedString *_TSAttributedString(int size, ...);
 - (TypesetFontBlock)font;
 - (TypesetExactFontBlock)exactFont;
 
+- (TypesetBOOLBlock)accessibilitySpeechPunctuation;
 - (TypesetStringBlock)accessibilitySpeechLanguage;
+- (TypesetCGFloatBlock)accessibilitySpeechPicth;
+- (TypesetBOOLBlock)accessibilitySpeechQueueAnnouncement;
+- (TypesetStringBlock)accessibilitySpeechIPANotation;
+- (TypesetBOOLBlock)accessibilitySpeechSpellOut;
 
 - (TypesetKit *)regular;
 - (TypesetKit *)light;

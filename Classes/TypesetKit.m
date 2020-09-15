@@ -122,11 +122,67 @@ NSMutableAttributedString *_TSAttributedString(int size, ...) {
     };
 }
 
+- (TypesetBOOLBlock)accessibilitySpeechPunctuation {
+    return ^(BOOL active) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:UIAccessibilitySpeechAttributePunctuation value:@(active) range:range];
+        }
+        return self;
+    };
+}
+
 - (TypesetStringBlock)accessibilitySpeechLanguage {
     return ^(NSString *language) {
         for (NSValue *value in self.attributeRanges) {
             NSRange range = [value rangeValue];
             [self.string addAttribute:UIAccessibilitySpeechAttributeLanguage value:language range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesetCGFloatBlock)accessibilitySpeechPicth {
+    return ^(CGFloat pitch) {
+        for (NSValue *value in self.attributeRanges) {
+            NSRange range = [value rangeValue];
+            [self.string addAttribute:UIAccessibilitySpeechAttributePitch value:@(pitch) range:range];
+        }
+        return self;
+    };
+}
+
+- (TypesetBOOLBlock)accessibilitySpeechQueueAnnouncement {
+    return ^(BOOL active) {
+        if (@available(iOS 11.0, *)) {
+            for (NSValue *value in self.attributeRanges) {
+                NSRange range = [value rangeValue];
+                [self.string addAttribute:UIAccessibilitySpeechAttributeQueueAnnouncement value:@(active) range:range];
+            }
+        }
+        return self;
+    };
+}
+
+- (TypesetStringBlock)accessibilitySpeechIPANotation {
+    return ^(NSString *notation) {
+        if (@available(iOS 11.0, *)) {
+            for (NSValue *value in self.attributeRanges) {
+                NSRange range = [value rangeValue];
+                [self.string addAttribute:UIAccessibilitySpeechAttributeIPANotation value:notation range:range];
+            }
+        }
+        return self;
+    };
+}
+
+- (TypesetBOOLBlock)accessibilitySpeechSpellOut {
+    return ^(BOOL active) {
+        if (@available(iOS 13.0, *)) {
+            for (NSValue *value in self.attributeRanges) {
+                NSRange range = [value rangeValue];
+                [self.string addAttribute:UIAccessibilitySpeechAttributeSpellOut value:@(active) range:range];
+            }
         }
         return self;
     };
